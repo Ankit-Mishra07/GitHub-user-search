@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { loginRequest,loginInvalid, loginSuccess, loginFailure } from '../Redux/Login/action'
 import {useDispatch, useSelector} from 'react-redux'
 import { saveData } from '../utils/localstorage'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
@@ -9,6 +10,7 @@ const Login = () => {
 
     const {isLoading, token, isError, message} = useSelector(state => state.logState)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         let {name, value} = e.target
@@ -56,6 +58,7 @@ const Login = () => {
         .then(res => res.json())
         .then(res => {
             saveData("gituser", [res])
+            navigate("/")
         })
         .catch((e) => {
             console.log(e)

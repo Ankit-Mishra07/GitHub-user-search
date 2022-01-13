@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import { regFailure, regRequest, regSuccess } from '../Redux/Register/action'
+import { useNavigate } from 'react-router-dom'
 const Register = () => {
 
     const [form, setForm] = useState({})
@@ -8,7 +9,8 @@ const Register = () => {
     const {isLoading, message, isError} = useSelector((state) => state.regState)
     console.log(isLoading, message, isError)
     const dispatch = useDispatch()
-
+    const navigate = useNavigate()
+    
     const handleChange = (e) => {
         let {name, value} = e.target
         setForm({
@@ -28,6 +30,7 @@ const Register = () => {
         }).then(res => res.json())
         .then((res) => {
             dispatch(regSuccess(res.message))
+            navigate("/github/login")
         })
         .catch((err) => {
             dispatch(regFailure(err.message))
