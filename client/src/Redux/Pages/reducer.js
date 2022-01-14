@@ -13,7 +13,10 @@ export const pageReducer = (state = init, {type , payload}) => {
             }
         case DSC_PAGE :
             if(state.page == 1) {
-                return state.page
+                return {
+                    ...state,
+                    page : state.page
+                }
             }
             return {
                 ...state,
