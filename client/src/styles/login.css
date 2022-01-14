@@ -1,0 +1,10 @@
+.login_box{
+    margin-top: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   width: fit-content;
+   margin: auto;
+   height: 100vh;
+}

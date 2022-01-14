@@ -11,9 +11,10 @@ const Home = () => {
     // const navigate = useNavigate()
     const dispatch = useDispatch()
     
-    if(token.length == 0) {
+    if(token.length == 0 || token[0] === null) {
      return <Navigate to={"/github/register"} />
     }
+
 
     
 

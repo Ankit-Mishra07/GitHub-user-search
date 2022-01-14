@@ -7,12 +7,18 @@ import Home from './components/Home';
 import {Routes, Route} from "react-router-dom"
 import Navbar from './components/Navbar';
 import { cardback } from './colors/colors';
+import { useSelector } from 'react-redux';
 
 
 function App() {
+
+  const {token} = useSelector(state => state.logState)
   return (
     <div className="App" style={{backgroundColor : cardback}}>
-      <Navbar />
+      {
+
+      token[0]!==null && <Navbar />
+      }
       <Routing />
     </div>
   );

@@ -3,6 +3,7 @@ import { loginRequest,loginInvalid, loginSuccess, loginFailure } from '../Redux/
 import {useDispatch, useSelector} from 'react-redux'
 import { saveData } from '../utils/localstorage'
 import { useNavigate } from 'react-router-dom'
+import '../styles/login.css'
 
 const Login = () => {
 
@@ -68,9 +69,9 @@ const Login = () => {
 
 
     return (
-        <div>
+        <div className='login_box'>
             <h1>{message}</h1>
-            <form method='POST'>
+            <form method='POST' className='form'>
                 <input type="text" name='username' placeholder='username' onChange={(e) => handleChange(e)}/>
                 <input type="password" name='password' placeholder='password' onChange={(e) => handleChange(e)}/>
                 <button onClick={(e) => UserLogin(e)}>Login</button>
