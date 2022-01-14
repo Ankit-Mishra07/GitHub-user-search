@@ -45,7 +45,7 @@ const Navbar = () => {
             <Box>
             <Link to="/" className={classes.link, classes.logo}><i class="fab fa-github"></i></Link>
             </Box>
-            <Input className={classes.input} placeholder='search users' onChange={() => navigate("/search") }/>
+            <Input className={classes.input} placeholder='search users' onChange={(e) => navigate(`/search/${e.target.value}`) }/>
             <Box>
             <Link to="/" className={classes.link}>Home</Link>
             <Link to="/profile" className={classes.link}>Profile</Link>
