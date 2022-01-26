@@ -22,7 +22,7 @@ const Profile = () => {
                     <p>Mobile : {getProfile.mobile}</p>
                     <p>Description : {getProfile.description}</p>
                 </div>
-                <a href="http://localhost:3000/github/register">
+                <a href="https://git-hub-user-search-lilac.vercel.app/github/register">
                 <button className='logout__btn' style={{color : white, backgroundColor: darkblack}}
                 onClick={() => {
                     saveData("gituser", [])
